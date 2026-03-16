@@ -1,0 +1,164 @@
+# ================================
+# OS
+# ================================
+
+.DS_Store
+Thumbs.db
+
+
+# ================================
+# ENV FILES
+# ================================
+
+.env
+.env.*
+!.env.example
+
+
+# ================================
+# PYTHON
+# ================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.so
+
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# ================================
+# PYTHON VENV
+# ================================
+
+venv/
+.venv/
+env/
+
+
+# ================================
+# FASTAPI / BACKEND
+# ================================
+
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+
+# ================================
+# ALEMBIC
+# ================================
+
+backend/alembic/versions/*.pyc
+
+
+# ================================
+# NODE / NEXT
+# ================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+frontend/node_modules/
+
+
+# ================================
+# NEXT BUILD
+# ================================
+
+.next/
+out/
+build/
+dist/
+
+
+# ================================
+# TYPESCRIPT
+# ================================
+
+*.tsbuildinfo
+
+
+# ================================
+# OPENAPI GENERATED CLIENT (opcjonalnie)
+# ================================
+
+frontend/src/api/
+
+
+# jeśli chcesz trzymać wygenerowany client w repo
+# to usuń powyższą linię
+
+
+# ================================
+# DATABASE
+# ================================
+
+*.sqlite
+*.db
+
+
+# ================================
+# REDIS
+# ================================
+
+dump.rdb
+
+
+# ================================
+# DOCKER
+# ================================
+
+*.log
+docker-data/
+
+
+# ================================
+# TEST / COVERAGE
+# ================================
+
+.coverage
+coverage.xml
+htmlcov/
+
+
+# ================================
+# IDE
+# ================================
+
+.vscode/
+.idea/
+
+
+# ================================
+# MAC
+# ================================
+
+.AppleDouble
+.LSOverride
+
+
+# ================================
+# TEMP FILES
+# ================================
+
+*.swp
+*.swo
+*~
