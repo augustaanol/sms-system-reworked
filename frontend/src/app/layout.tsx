@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/layout/nav/app-sidebar"
+import { ThemeProvider } from "@/components/theme/theme-provider"
+import { ColorModeToggle } from "@/components/theme/color-mode-toggle";
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -26,11 +31,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)}>
+    <html lang="en" className={cn("font-sans", inter.variable)} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+         <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
+              <TooltipProvider>
+                <AppSidebar />
+                <main>
+                  <SidebarTrigger />
+                  <ColorModeToggle />
+                  {children}
+                </main>
+              </TooltipProvider>
+            </SidebarProvider>
+          </ThemeProvider>
       </body>
     </html>
   );
