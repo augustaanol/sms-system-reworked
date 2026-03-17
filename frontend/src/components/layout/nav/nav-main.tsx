@@ -9,9 +9,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 
 export function NavMain({
@@ -27,30 +24,22 @@ export function NavMain({
   }[]
 }) {
   return (
-    {items.map((groupItem) => (
-    <SidebarGroup>
-      <SidebarGroupLabel>{groupItem.groupName}</SidebarGroupLabel>
+    <>
+    {items.map((item) => (
+    <SidebarGroup key={item.groupName}>
+      <SidebarGroupLabel>{item.groupName}</SidebarGroupLabel>
       <SidebarMenu>
-            <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton tooltip={item.title}>
-                  {item.icon && <item.icon />}
-                  <span>{item.title}</span>
-                </SidebarMenuButton>
-                <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-            </SidebarMenuItem>
-        
+        {item.items?.map((subItem) => (
+          <SidebarMenuItem key={subItem.title}>
+              <SidebarMenuButton tooltip={subItem.title}>
+                {subItem.icon && <subItem.icon />}
+                <span>{subItem.title}</span>
+              </SidebarMenuButton>
+          </SidebarMenuItem>
+        ))}
       </SidebarMenu>
     </SidebarGroup>
     ))}
+    </>
   )
 }

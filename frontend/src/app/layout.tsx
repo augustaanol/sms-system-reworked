@@ -7,6 +7,7 @@ import { AppSidebar } from "@/components/layout/nav/app-sidebar"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { ColorModeToggle } from "@/components/theme/color-mode-toggle";
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { TopBar } from "@/components/layout/top-bar";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -41,13 +42,20 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SidebarProvider>
+            <SidebarProvider
+              style={{
+                "--sidebar-width": "16rem",
+                "--sidebar-width-mobile": "20rem",
+              } as React.CSSProperties
+            }
+            >
               <TooltipProvider>
                 <AppSidebar />
-                <main>
-                  <SidebarTrigger />
-                  <ColorModeToggle />
-                  {children}
+                <main className="w-full">
+                  <TopBar />
+                  <div className="p-3">
+                    {children}
+                  </div>
                 </main>
               </TooltipProvider>
             </SidebarProvider>
