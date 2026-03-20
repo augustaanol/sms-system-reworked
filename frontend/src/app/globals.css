@@ -45,6 +45,12 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  --gap: 8px;
+  --gap-sm: calc(var(--gap) * 1);
+  --gap-md: calc(var(--gap) * 2);
+  --gap-lg: calc(var(--gap) * 3);
+  --gap-xl: calc(var(--gap) * 4);
 }
 
 :root {
