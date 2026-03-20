@@ -25,7 +25,7 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?_=20150327203541",
   },
   navMain: [
     {
@@ -42,7 +42,7 @@ const data = {
           icon: Megaphone,
         },
         {
-          title: "Contacts",
+          title: "Subscribers",
           url: "#",
           icon: ContactRound,
         },
